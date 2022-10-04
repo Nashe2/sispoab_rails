@@ -1,14 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<h1>Lista de Materiales</h1>
 
-<h1>Materials</h1>
+<a href=" <%= new_material_path %>" class="btn btn-primary btn-icon-split">
 
-<div id="materials">
-  <% @materials.each do |material| %>
-    <%= render material %>
-    <p>
-      <%= link_to "Show this material", material %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New material", new_material_path %>
+  <span class="icon text-white-50">
+    <i class="fas fa-plus"></i>
+  </span>
+  <span class="text">Crear material</span>
+</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Cantidad</th>
+      <th>Precio Unitario</th>
+      <th>Es Hilo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.id %></td>
+        <td><%= material.name %></td>
+        <td><%= material.description %></td>
+        <td><%= 0 %></td>
+        <td><%= material.unit_price %></td>
+        <td><%= material.is_thread%></td>
+        <td> <%= link_to "Detalles", material_path(material), class: 'btn btn-primary' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
