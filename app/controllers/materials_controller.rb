@@ -10,7 +10,7 @@ class MaterialsController < ApplicationController
   def show
   end
 
-  # GET /materials/new
+  # GET /materials/new instancia a un nuevo material
   def new
     @material = Material.new
   end
