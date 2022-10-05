@@ -1,10 +1,36 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @material %>
-
-<div>
-  <%= link_to "Edit this material", edit_material_path(@material) %> |
-  <%= link_to "Back to materials", materials_path %>
-
-  <%= button_to "Destroy this material", @material, method: :delete %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles de material</h1>
+    <%= link_to "Regresar al listado de materiales", materials_path, class:"btn btn-warning"%>
+    <%= link_to "Editar material", edit_material_path, class:"btn btn-primary" %>
+    <%= link_to "Eliminar material", @material, method: :delete, class:"btn btn-danger"%>
+    <div class="card">
+      <table class="table">
+        <tr>
+          <td><b>Nombre del material:</b></td>
+          <td><%= @material.name %></td>
+        </tr>
+        <tr>
+          <td><b>Descripcion:</b></td>
+          <td><%= @material.description %></td>
+        </tr>
+        <tr>
+          <td><b>Cantidad:</b></td>
+          <td><%= 0 %></td>
+        </tr>
+        <tr>
+          <td><b>Precio unitario:</b></td>
+          <td><%= @material.unit_price %></td>
+        </tr>
+        <tr>
+          <td><b>Es hilo:</b></td>
+          <td><%= @material.is_thread %></td>
+        </tr>
+        <tr>
+          <td><b>Fecha de creación:</b></td>
+          <td><%= @material.created_at %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
