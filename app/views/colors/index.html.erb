@@ -1,0 +1,30 @@
+<h1>Listado de Colores</h1>
+
+<a href=" <%= new_color_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+    <i class="fas fa-plus"></i>
+  </span>
+  <span class="text">Crear color</span>
+</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Codigo hexadecimal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @colors.each do |color| %>
+      <tr>
+        <td><%= color.id %></td>
+        <td><%= color.name %></td>
+        <td><%= color.hex_code %></td>
+        <td> <%= link_to "Detalles", color_path(color), class: 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
