@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_03_205130) do
   create_table "materials", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "quantity"
     t.float "unit_price"
     t.boolean "is_thread"
     t.datetime "created_at", null: false
