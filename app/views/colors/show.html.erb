@@ -6,20 +6,21 @@
     <%= link_to "Eliminar color", color_path(@color), data: {
                     turbo_method: :delete,
                     turbo_confirm: "¿Está seguro?"
-                  }, class:"btn btn-danger"%>
+                  }, class:"btn btn-danger" %>
     <br>
     <br>
     <div class="card">
       <table class="table">
         <tr>
           <td><b>Nombre del color</b></td>
-          <td><%= @color.name %></td></td>
-        </tr>
-        <tr>
-          <td><b>Código hexadecimal</b></td>
-          <td><%= @color.hex_code %></td>
-        </tr>
-      </table>
-    </div>
+          <td><%= @color.name %></td>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Código hexadecimal</b></td>
+        <td><%= @color.hex_code %></td>
+      </tr>
+    </table>
   </div>
+</div>
 </div>
