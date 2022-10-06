@@ -1,14 +1,35 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>People</h1>
-
-<div id="people">
-  <% @people.each do |person| %>
-    <%= render person %>
-    <p>
-      <%= link_to "Show this person", person %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New person", new_person_path %>
+<h1>Lista de Personas</h1>
+<a href=" <%= new_person_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+    <i class="fas fa-plus"></i>
+  </span>
+  <span class="text">Crear persona</span>
+</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido materno</th>
+      <th>Apellido paterno</th>
+      <th>Celular</th>
+      <th>Sexo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.id %></td>
+        <td><%= person.name %></td>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.phone %></td>
+        <td><%= person.is_sex ? 'Mujer' : 'Hombre'%></td>
+        <td> <%= link_to "Detalles", person_path(person), class: 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

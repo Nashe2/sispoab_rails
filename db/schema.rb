@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_051345) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone"
-    t.string "sex"
+    t.boolean "sex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
