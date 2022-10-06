@@ -1,10 +1,41 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @person %>
-
-<div>
-  <%= link_to "Edit this person", edit_person_path(@person) %> |
-  <%= link_to "Back to people", people_path %>
-
-  <%= button_to "Destroy this person", @person, method: :delete %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles de persona</h1>
+    <%= link_to "Regresar al listado de personas", people_path, class:"btn btn-warning"%>
+    <%= link_to "Editar persona", edit_person_path, class:"btn btn-primary" %> |
+    <%= link_to "Eliminar persona", person_path(@person), data: {
+    turbo_method: :delete,
+    turbo_confirm: "¿Está seguro"
+  }, class:"btn btn-danger" %>
+    <br>
+    <br>
+    <div class="card">
+      <table class="table">
+        <tr>
+          <td><b>Nombre de la persona:</b></td>
+          <td><%= @person.name %></td>
+        </tr>
+        <tr>
+          <td><b>Apellido paterno:</b></td>
+          <td><%= @person.first_name %></td>
+        </tr>
+        <tr>
+          <td><b>Apellido materno:</b></td>
+          <td><%= @person.last_name %></td>
+        </tr>
+        <tr>
+          <td><b>Celular:</b></td>
+          <td><%= @person.phone %></td>
+        </tr>
+        <tr>
+          <td><b>Género:</b></td>
+          <td><%= @person.gender %></td>
+        </tr>
+        <tr>
+          <td><b>Fecha de creación:</b></td>
+          <td><%= @person.created_at %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
