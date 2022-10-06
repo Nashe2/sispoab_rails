@@ -49,6 +49,7 @@ class ColorsController < ApplicationController
 
   # DELETE /colors/1 or /colors/1.json
   def destroy
+    @color = Color.find(params[:id])
     @color.destroy
 
     respond_to do |format|
