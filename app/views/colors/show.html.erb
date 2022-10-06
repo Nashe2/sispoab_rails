@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @color %>
-
-<div>
-  <%= link_to "Edit this color", edit_color_path(@color) %> |
-  <%= link_to "Back to colors", colors_path %>
-
-  <%= button_to "Destroy this color", @color, method: :delete %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles de color</h1>
+    <%= link_to "Regresar al listado de colores", colors_path, class:"btn btn-warning" %>
+    <%= link_to "Editar color", edit_color_path, class:"btn btn-primary" %>
+    <%= link_to "Eliminar color", colors_path(@color), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "¿Está seguro?"
+                  }, class:"btn btn-danger"%>
+    <br>
+    <br>
+    <div class="card">
+      <table class="table">
+        <tr>
+          <td><b>Nombre del color</b></td>
+          <td><%= @color.name %></td></td>
+        </tr>
+        <tr>
+          <td><b>Código hexadecimal</b></td>
+          <td><%= @color.hex_code %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
