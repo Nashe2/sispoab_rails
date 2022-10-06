@@ -1,9 +1,6 @@
-<h1>New person</h1>
-
+<h1>Crear nueva persona</h1>
+<%= link_to "Regresar al listado de materiales", people_path, class: 'btn btn-primary' %>
+<br><br>
 <%= render "form", person: @person %>
 
-<br>
 
-<div>
-  <%= link_to "Back to people", people_path %>
-</div>
