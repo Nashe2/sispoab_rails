@@ -15,7 +15,7 @@
       <th>Apellido materno</th>
       <th>Apellido paterno</th>
       <th>Celular</th>
-      <th>Sexo</th>
+      <th>Género</th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
         <td><%= person.first_name %></td>
         <td><%= person.last_name %></td>
         <td><%= person.phone %></td>
-        <td><%= person.is_sex ? 'Mujer' : 'Hombre'%></td>
+        <td><%= person.gender %></td>
         <td> <%= link_to "Detalles", person_path(person), class: 'btn btn-primary' %></td>
       </tr>
     <% end %>
