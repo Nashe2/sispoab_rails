@@ -50,7 +50,6 @@ class MaterialsController < ApplicationController
   # DELETE /materials/1 or /materials/1.json
   def destroy
     @material = Material.find(params[:id])
-    puts "id: #{params[:id]} object: #{@material}"
     @material.destroy   
 
     respond_to do |format|
