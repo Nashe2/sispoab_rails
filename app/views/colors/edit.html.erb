@@ -1,10 +1,8 @@
-<h1>Editing color</h1>
-
-<%= render "form", color: @color %>
-
-<br>
+<h1>Editar color</h1>
 
 <div>
-  <%= link_to "Show this color", @color %> |
-  <%= link_to "Back to colors", colors_path %>
+  <%= link_to "Ver detales de color", @color, class:"btn btn-primary" %> |
+  <%= link_to "Regresar al listado de colores", colors_path, class:"btn btn-warning" %>
 </div>
+<br>
+<%= render "form", color: @color %>
