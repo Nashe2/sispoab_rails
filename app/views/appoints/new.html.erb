@@ -1,9 +1,4 @@
-<h1>New appoint</h1>
-
+<h1>Crear nueva asignación</h1>
+<%= link_to "Regresar al listado de asignaciones", appoints_path, class: 'btn btn-primary' %>
+<br><br>
 <%= render "form", appoint: @appoint %>
-
-<br>
-
-<div>
-  <%= link_to "Back to appoints", appoints_path %>
-</div>

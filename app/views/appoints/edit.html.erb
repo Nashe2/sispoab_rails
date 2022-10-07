@@ -1,10 +1,8 @@
-<h1>Editing appoint</h1>
-
-<%= render "form", appoint: @appoint %>
-
-<br>
+<h1>Editar asignación</h1>
 
 <div>
-  <%= link_to "Show this appoint", @appoint %> |
-  <%= link_to "Back to appoints", appoints_path %>
+  <%= link_to "Ver detalles de asignación", @appoint, class:"btn btn-primary" %> |
+  <%= link_to "Regresar al listado de asignaciones", appoints_path, class:"btn btn-warning" %>
 </div>
+<br>
+<%= render "form", appoint: @appoint %>

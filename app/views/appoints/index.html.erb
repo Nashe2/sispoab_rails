@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Appoints</h1>
-
-<div id="appoints">
-  <% @appoints.each do |appoint| %>
-    <%= render appoint %>
-    <p>
-      <%= link_to "Show this appoint", appoint %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New appoint", new_appoint_path %>
+<h1>Lista de asignación de material</h1>
+<a href=" <%= new_appoint_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+    <i class="fas fa-plus"></i>
+  </span>
+  <span class="text">Crear asignación</span>
+</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cantidad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appoints.each do |appoint| %>
+      <tr>
+        <td><%= appoint.id %></td>
+        <td><%= appoint.quantity %></td>
+        <td> <%= link_to "Detalles", appoint_path(appoint), class: 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

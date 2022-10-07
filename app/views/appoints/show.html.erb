@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @appoint %>
-
-<div>
-  <%= link_to "Edit this appoint", edit_appoint_path(@appoint) %> |
-  <%= link_to "Back to appoints", appoints_path %>
-
-  <%= button_to "Destroy this appoint", @appoint, method: :delete %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles de asignación</h1>
+    <%= link_to "Regresar al listado de asignación", appoints_path, class:"btn btn-warning"%>
+    <%= link_to "Editar asignación", edit_appoint_path, class:"btn btn-primary" %>
+    <%= link_to "Eliminar asignación", appoint_path(@appoint), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "¿Está seguro?"
+                  }, class:"btn btn-danger"%>
+    <br>
+    <br>
+    <div class="card">
+      <table class="table">
+        <tr>
+          <td><b>En existencia:</b></td>
+          <td><%= @appoint.quantity %></td>
+        </tr>
+        <tr>
+          <td><b>Fecha de creación:</b></td>
+          <td><%= @appoint.created_at %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
