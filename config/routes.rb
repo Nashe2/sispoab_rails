@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :crochets
   resources :products
   resources :people
   resources :colors
