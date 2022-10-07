@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @appoint %>
+
+<div>
+  <%= link_to "Edit this appoint", edit_appoint_path(@appoint) %> |
+  <%= link_to "Back to appoints", appoints_path %>
+
+  <%= button_to "Destroy this appoint", @appoint, method: :delete %>
+</div>
