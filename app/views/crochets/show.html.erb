@@ -1,10 +1,29 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @crochet %>
-
-<div>
-  <%= link_to "Edit this crochet", edit_crochet_path(@crochet) %> |
-  <%= link_to "Back to crochets", crochets_path %>
-
-  <%= button_to "Destroy this crochet", @crochet, method: :delete %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Detalles de tejido</h1>
+    <%= link_to "Regresar al listado de tejidos", crochets_path, class:"btn btn-warning"%>
+    <%= link_to "Editar tejido", edit_crochet_path, class:"btn btn-primary" %>
+    <%= link_to "Eliminar tejido", crochet_path(@crochet), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "¿Está seguro?"
+                  }, class:"btn btn-danger"%>
+    <br>
+    <br>
+    <div class="card">
+      <table class="table">
+        <tr>
+          <td><b>Precio final:</b></td>
+          <td><%= @crochet.ending_price %> MX</td>
+        </tr>
+        <tr>
+          <td><b>En existencia:</b></td>
+          <td><%= @crochet.sale %></td>
+        </tr>
+        <tr>
+          <td><b>Fecha de creación:</b></td>
+          <td><%= @crochet.created_at %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
