@@ -1,6 +1,7 @@
-<h1>Crear nuevo material</h1>
-<%= link_to "Regresar al listado de materiales", materials_path, class: 'btn btn-primary' %>
-<br><br>
-<%= render "form", material: @material %>
+<h1 class="text-center">Crear material</h1>
 
+  <%= link_to "Regresar al listado", materials_path, class: 'btn btn-primary pull-right'  %>
+  <br>
+  <br>
+  <%= render "form", material: @material %>
 
