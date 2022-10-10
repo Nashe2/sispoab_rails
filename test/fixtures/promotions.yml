@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titule: MyString
+  description: MyString
+  start_date: 2022-10-07 18:11:01
+  ending_date: 2022-10-07 18:11:01
+  discount_porcentage: 1.5
+
+two:
+  titule: MyString
+  description: MyString
+  start_date: 2022-10-07 18:11:01
+  ending_date: 2022-10-07 18:11:01
+  discount_porcentage: 1.5
