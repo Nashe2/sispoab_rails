@@ -49,7 +49,7 @@ class CrochetsController < ApplicationController
 
   # DELETE /crochets/1 or /crochets/1.json
   def destroy
-    @material = Material.find(params[:id])
+    @crochet = Crochet.find(params[:id])
     @crochet.destroy
 
     respond_to do |format|
