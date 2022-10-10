@@ -19,6 +19,8 @@ class AppointsController < ApplicationController
 
   # GET /appoints/1/edit
   def edit
+    @materials = Material.all
+    @people = Person.all
   end
 
   # POST /appoints or /appoints.json
