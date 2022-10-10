@@ -12,6 +12,8 @@
             </ul>
           </div>
         <% end %>
+        <%= form.collection_select :person_id, @people, :id, :name, class: 'form-control' %>
+        <%= form.collection_select :product_id, @products, :id, :name_with_description, class: 'form-control' %>
         <div class= "form-group">
           <%= form.label :ending_price, style: "display: block" %>
           <%= form.number_field :ending_price,  class:"form-control" %>

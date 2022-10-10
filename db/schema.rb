@@ -40,8 +40,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_080359) do
   create_table "crochets", charset: "utf8mb4", force: :cascade do |t|
     t.integer "ending_price"
     t.boolean "sale"
+    t.bigint "person_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_crochets_on_person_id"
+    t.index ["product_id"], name: "index_crochets_on_product_id"
   end
 
   create_table "materials", charset: "utf8mb4", force: :cascade do |t|
@@ -86,4 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_080359) do
   add_foreign_key "appointments", "people"
   add_foreign_key "appoints", "materials"
   add_foreign_key "appoints", "people"
+  add_foreign_key "crochets", "people"
+  add_foreign_key "crochets", "products"
 end

@@ -10,6 +10,9 @@ class Person < ApplicationRecord
     has_many :appoints   
     has_many :materials, through: :appoints
     
+    has_many :crochets   
+    has_many :products, through: :crochets
+    
     #attr_accessor :appointment_elements #Permite crear propiedad que puedo leer y escribir, es agregar una propiedad al objeto
 
     # def save_appointments

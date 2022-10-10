@@ -13,10 +13,14 @@ class CrochetsController < ApplicationController
   # GET /crochets/new
   def new
     @crochet = Crochet.new
+    @products = Product.all
+    @people = Person.all
   end
 
   # GET /crochets/1/edit
   def edit
+    @people = Person.all
+    @products = Product.all
   end
 
   # POST /crochets or /crochets.json
@@ -66,6 +70,6 @@ class CrochetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def crochet_params
-      params.require(:crochet).permit(:ending_price, :sale)
+      params.require(:crochet).permit(:ending_price, :sale, :person_id, :product_id)
     end
 end
