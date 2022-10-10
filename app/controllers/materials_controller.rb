@@ -22,6 +22,7 @@ class MaterialsController < ApplicationController
   # POST /materials or /materials.json
   def create
     @material = Material.new(material_params)
+    #@material = Material.create(name: params[:name])
 
     respond_to do |format|
       if @material.save
@@ -59,12 +60,12 @@ class MaterialsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use devoluciones de llamada para compartir configuraciones comunes o restricciones entre acciones.
     def set_material
       @material = Material.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Solo permita el paso de una lista de parámetros de confianza.
     def material_params
       params.require(:material).permit(:name, :description, :quantity, :unit_price, :is_thread)
     end
