@@ -11,6 +11,8 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th>Persona</th>
+      <th>Material</th>
       <th>Cantidad</th>
       <th>Acciones</th>
     </tr>
@@ -19,6 +21,8 @@
     <% @appoints.each do |appoint| %>
       <tr>
         <td><%= appoint.id %></td>
+        <td><%= appoint.person.name %></td>
+        <td><%= appoint.material.name_with_description %></td>
         <td><%= appoint.quantity %></td>
         <td> <%= link_to "Detalles", appoint_path(appoint), class: 'btn btn-primary' %></td>
       </tr>

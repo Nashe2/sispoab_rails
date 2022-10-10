@@ -13,6 +13,8 @@ class AppointsController < ApplicationController
   # GET /appoints/new
   def new
     @appoint = Appoint.new
+    @materials = Material.all
+    @people = Person.all
   end
 
   # GET /appoints/1/edit
@@ -36,6 +38,7 @@ class AppointsController < ApplicationController
 
   # PATCH/PUT /appoints/1 or /appoints/1.json
   def update
+
     respond_to do |format|
       if @appoint.update(appoint_params)
         format.html { redirect_to appoint_url(@appoint), notice: "Appoint was successfully updated." }
@@ -66,6 +69,6 @@ class AppointsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def appoint_params
-      params.require(:appoint).permit(:quantity)
+      params.require(:appoint).permit(:quantity, :person_id, :material_id)
     end
 end

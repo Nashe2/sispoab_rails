@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+def seed_materials
+    Material.create(
+        name: "Hilo",
+        description: "De primera",
+        quantity: 100,
+        unit_price: 290.0,
+        is_thread: true
+    )
+
+    Material.create(
+        name: "Hilo",
+        description: "De tercera",
+        quantity: 150,
+        unit_price: 250.0,
+        is_thread: true
+    )
+
+    Material.create(
+        name: "Base de mecedora",
+        description: "Madera de caoba",
+        quantity: 50,
+        unit_price: 1900.0,
+        is_thread: false
+    )
+end
+
+seed_materials

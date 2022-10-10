@@ -8,11 +8,13 @@ class PeopleController < ApplicationController
 
   # GET /people/1 or /people/1.json
   def show
+    #@person = Person.finf(params[:id])
   end
 
   # GET /people/new
   def new
     @person = Person.new
+    #@materials = Material.all
   end
 
   # GET /people/1/edit
@@ -22,7 +24,9 @@ class PeopleController < ApplicationController
   # POST /people or /people.json
   def create
     @person = Person.new(person_params)
-
+    #propiedad @person.appointment_elements por el siguiente método
+    # @person.save_appointments
+    
     respond_to do |format|
       if @person.save
         format.html { redirect_to person_url(@person), notice: "Person was successfully created." }
@@ -36,6 +40,9 @@ class PeopleController < ApplicationController
 
   # PATCH/PUT /people/1 or /people/1.json
   def update
+    #@person.update(person_params)
+    #@person.save_appointments
+
     respond_to do |format|
       if @person.update(person_params)
         format.html { redirect_to person_url(@person), notice: "Person was successfully updated." }
@@ -66,6 +73,6 @@ class PeopleController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.require(:person).permit(:name, :first_name, :last_name, :phone, :gender)
+      params.require(:person).permit(:name, :first_name, :last_name, :phone, :gender) #,:appointment_elements
     end
 end
